@@ -1,11 +1,12 @@
 ## EX.NO: 01<br>
-## DATE: 
+## DATE: 15.03.2023
 ## <p align="center">READ AND WRITE AN IMAGE</p>
-## AIM
+## Aim:
+<br>
 To write a python program using OpenCV to do the following image manipulations.
-i) Read, display, and write an image.
-ii) Access the rows and columns in an image.
-iii) Cut and paste a small portion of the image.
+<br>i) Read, display, and write an image.
+<br>ii) Access the rows and columns in an image.
+<br>iii) Cut and paste a small portion of the image.
 
 ## Software Required:
 Anaconda - Python 3.7
@@ -20,51 +21,38 @@ Use imshow(window_name, image) to display the image.
 Use imwrite(filename, image) to write the image.
 ### Step5:
 End the program and close the output image windows.
+
 ## Program:
-python
-```
-# Developed By: M VIGNESH
-# Register Number: 212220233002
+
+### Developed By: M VIGNESH
+### Register Number : 212220233002
+
+```python
 # To Read,display the image
 
 import cv2
-pic=cv2.imread("mj.jpg",1)
-cv2.imshow(pic)
-
+image=cv2.imread("F4thai.png")
+cv2.imshow("image",image)
 cv2.waitKey(0)
 
 # To write the image
-
-cv2.imwrite("IMAGE1.jpeg",pic)
-
+cv2.imwrite("image2.png", image)
 
 # Find the shape of the Image
-
-print(pic.shape)
+print(image.shape)
 
 # To access rows and columns
-
-import random
-for i in range(100):
-    for j in range(pic.shape[1]):
-        pic[i][j]=[random.randint(0,255),random.randint(0,255),random.randint(0,255)]
-cv2.imshow(pic)
+for i in range(70,90):
+for j in range(110,170):
+image[i][j]=[0,0,0]
+cv2.imshow("image",image)
 cv2.waitKey(0)
 
 # To cut and paste portion of image
-
-pic2=cv2.imread("mj.jpg",1)
-pic2 = cv2.resize(pic2, (300, 430))
-pic2[500:550,500:550]=[0,0,0]
-
-cut= pic2[37:111,108:195]
-pic2[0:74,0:87]=cut
-
-cv2.imshow(pic2)
-
-
+image[70:90,110:175]=image[70:90,110:175]
+cv2.imshow("image",image)
+cv2.waitKey(0)
 ```
-
 
 ## Output:
 
